@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Mouse Tailor
+Comment=Buttons, gestures, scrolling and battery for your Logitech mouse
+Exec=mouse-tailor
+Icon=input-mouse
+Terminal=false
+Categories=Settings;HardwareSettings;
+Keywords=Logitech;mouse;buttons;gestures;scroll;battery;logiops;remap;
+StartupNotify=true

@@ -1,0 +1,31 @@
+#!/bin/sh
+# Root helper for Mouse Tailor, run through pkexec. It only ever touches LogiOps:
+#   apply FILE      install FILE as /etc/logid.cfg and restart logid
+#   detect [SECS]   briefly run logid verbosely so the app can read each device's buttons
+set -e
+
+case "$1" in
+apply)
+    [ -f "$2" ] || { echo "No such file: $2" >&2; exit 2; }
+    # Keep the config that was there before the first change made by this app.
+    if [ -f /etc/logid.cfg ] && [ ! -f /etc/logid.cfg.bak ]; then
+        cp /etc/logid.cfg /etc/logid.cfg.bak
+    fi
+    install -m 644 "$2" /etc/logid.cfg
+    systemctl enable logid >/dev/null 2>&1 || true
+    systemctl restart logid
+    ;;
+detect)
+    secs=${2:-6}
+    case "$secs" in *[!0-9]*|'') echo "Bad duration: $secs" >&2; exit 2 ;; esac
+    empty=$(mktemp)
+    # The running service holds the devices, so pause it and always start it again.
+    trap 'rm -f "$empty"; systemctl start logid' EXIT
+    systemctl stop logid 2>/dev/null || true
+    stdbuf -oL -eL timeout "$secs" logid -v -c "$empty" 2>&1 || true
+    ;;
+*)
+    echo "usage: $0 apply FILE | detect [SECONDS]" >&2
+    exit 2
+    ;;
+esac

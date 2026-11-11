@@ -1,0 +1,8 @@
+{
+  "uuid": "mouse-tailor@mousetailor.github.io",
+  "name": "Mouse Tailor",
+  "description": "Shows the battery of your mouse and other wireless devices in the top bar and Quick Settings. Part of the Mouse Tailor app.",
+  "shell-version": ["46", "47", "48", "49", "50"],
+  "settings-schema": "org.gnome.shell.extensions.mouse-tailor",
+  "version-name": "1.1.0"
+}

@@ -1,0 +1,110 @@
+/* Mouse Tailor. Colours come from libadwaita's named colours, so light, dark and accent colours follow the system. */
+
+.device-card,
+.add-card {
+  padding: 18px;
+  border-radius: 18px;
+  transition: background-color 200ms ease-out, box-shadow 200ms ease-out;
+}
+
+.device-card:hover {
+  box-shadow: 0 6px 18px alpha(black, 0.12), 0 0 0 1px alpha(@accent_bg_color, 0.35);
+}
+
+.device-card:active {
+  box-shadow: 0 2px 6px alpha(black, 0.10), 0 0 0 1px alpha(@accent_bg_color, 0.5);
+}
+
+.add-card {
+  background: none;
+  border: 2px dashed alpha(currentColor, 0.15);
+  box-shadow: none;
+}
+
+.add-card:hover {
+  border-color: alpha(@accent_bg_color, 0.6);
+  background-color: alpha(@accent_bg_color, 0.06);
+}
+
+.add-badge {
+  min-width: 52px;
+  min-height: 52px;
+  border-radius: 999px;
+  background-color: alpha(currentColor, 0.08);
+}
+
+.add-badge > stack {
+  margin: 15px;
+}
+
+.device-badge {
+  border-radius: 999px;
+  color: @accent_fg_color;
+  background-image: linear-gradient(135deg, shade(@accent_bg_color, 1.15), shade(@accent_bg_color, 0.82));
+  box-shadow: 0 6px 16px alpha(@accent_bg_color, 0.35);
+}
+
+.status-dot {
+  min-width: 8px;
+  min-height: 8px;
+  border-radius: 999px;
+}
+
+.status-dot.connected {
+  background-color: #2ec27e;
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+.status-dot.offline {
+  background-color: alpha(currentColor, 0.3);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 alpha(#2ec27e, 0.55); }
+  70% { box-shadow: 0 0 0 6px alpha(#2ec27e, 0); }
+  100% { box-shadow: 0 0 0 0 alpha(#2ec27e, 0); }
+}
+
+.battery-bar levelbar trough {
+  min-height: 6px;
+  border-radius: 999px;
+}
+
+.battery-bar levelbar block {
+  min-height: 6px;
+  border-radius: 999px;
+}
+
+/* Same colours as the battery ring on the device page. */
+.battery-bar levelbar block.high,
+.battery-bar levelbar block.full {
+  background-color: #2ec27e;
+}
+
+.battery-bar levelbar block.low {
+  background-color: #e01b24;
+}
+
+.hero-title {
+  font-size: 22pt;
+  font-weight: 800;
+}
+
+.status-pill {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background-color: alpha(currentColor, 0.06);
+}
+
+.speed-value {
+  color: @accent_color;
+  font-weight: bold;
+}
+
+.speed-row {
+  padding: 12px 14px 4px 14px;
+}
+
+.apply-button {
+  min-width: 72px;
+}

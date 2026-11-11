@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.mousetailor.MouseTailor</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Mouse Tailor</name>
+  <summary>Buttons, gestures, scrolling and battery for Logitech mice</summary>
+  <description>
+    <p>
+      Mouse Tailor is a settings app for Logitech mice on Linux. Choose what each button does,
+      set up hold-and-swipe gestures, change scroll speed and direction, and see battery levels
+      in the app, the top bar and Quick Settings. It is a front end for LogiOps, which does the
+      work in the background.
+    </p>
+    <p>Not affiliated with or endorsed by Logitech.</p>
+  </description>
+  <url type="homepage">https://github.com/faizankhan63/mouse-tailor</url>
+  <url type="bugtracker">https://github.com/faizankhan63/mouse-tailor/issues</url>
+  <launchable type="desktop-id">io.github.mousetailor.MouseTailor.desktop</launchable>
+  <developer id="io.github.mousetailor">
+    <name>Mouse Tailor contributors</name>
+  </developer>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.1.0" date="2026-11-11">
+      <description>
+        <p>Renamed to Mouse Tailor. New design, scroll speed and direction, and battery levels in the app, top bar and Quick Settings.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-11-11">
+      <description>
+        <p>First release: button remapping, gestures, and device detection.</p>
+      </description>
+    </release>
+  </releases>
+</component>

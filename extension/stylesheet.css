@@ -1,0 +1,13 @@
+.mouse-tailor-panel-label {
+  padding-left: 2px;
+  font-feature-settings: "tnum";
+}
+
+.mouse-tailor-level {
+  padding: 0 8px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.mouse-tailor-low {
+  color: #f8e45c;
+}

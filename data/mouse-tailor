@@ -1,0 +1,3 @@
+#!/bin/sh
+# Uses the system Python, which has the GTK bindings, even when another python3 is first on PATH.
+exec /usr/bin/python3 /usr/share/mouse-tailor/mouse_tailor.py "$@"
